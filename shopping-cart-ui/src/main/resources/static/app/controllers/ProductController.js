@@ -13,13 +13,13 @@ app.controller('ProductController',['$scope','$http', '$location','cartFactory',
       $scope.showMenu = true;
       $scope.totalCartSize =  cartFactory.totalCartSize
       console.log('Inside the ProductController=======================');
-      var auth_token = cartFactory.auth_token;
+      var auth_token = "asd";//cartFactory.auth_token;
       $scope.productDetails = "";
 
 
     $scope.getproducts =function(){
         console.log('Inside the ProductController::before $scope.token=======================');
-        $scope.token = cartFactory.auth_token;
+        $scope.token = "asd";//cartFactory.auth_token;
         console.log('Inside the ProductController::after $scope.token====='+ $scope.token);
         $scope.showLoadder = true;
          
@@ -36,7 +36,7 @@ app.controller('ProductController',['$scope','$http', '$location','cartFactory',
         url: url,
         headers: {
            "Content-Type": "application/json",
-            "authorization": auth_token
+            "authorization": "abc"
         }
        }).then(function success(response){
         $scope.showLoadder = false;   
@@ -103,7 +103,7 @@ app.controller('ProductController',['$scope','$http', '$location','cartFactory',
       $scope.currentPage = 1; //reset to first paghe
     };
 
-    // For deleting the unwanted keys from the JSON before storing in cart.
+        // For deleting the unwanted keys from the JSON before storing in cart.
     $scope.storeToCart = function(itemObj) {
         if(itemObj.$$hashKey) {
             delete itemObj.$$hashKey;

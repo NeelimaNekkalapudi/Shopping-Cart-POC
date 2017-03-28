@@ -1,4 +1,6 @@
-package com.product;
+package com.product.service;
+
+import com.product.model.Product;
 
 import java.util.List;
 

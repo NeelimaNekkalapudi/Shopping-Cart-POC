@@ -1,5 +1,5 @@
 app.constant('SERVICE_URL', {
-    "PRODUCTS_URL" : "/products",
+    "PRODUCTS_URL" : "/products/",
     "PRODUCTS_SKU_URL" : "/products/search/",
     "ACCESSORY_URL" : "/accessories",
     "PRODUCT_DETAILS_URL":"/products/details/",

@@ -1,0 +1,10 @@
+server:
+  port: 3000
+
+spring:
+  data:
+    mongodb:
+      database: demodb
+      host: localhost
+      port: 27017
+

@@ -1,15 +1,13 @@
-package com.product;
+package com.product.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document(collection = "product")
 public class Product {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
     private String epid;
     private String name;
     private String description;
@@ -27,11 +25,11 @@ public class Product {
 
     public Product(){}
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -1,14 +1,14 @@
-package com.product;
+package com.product.model;
 
-import javax.persistence.*;
+import com.product.model.Product;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document(collection = "productdetails")
 public class ProductDetails {
 
     @Id
-    @GeneratedValue
     private Long id;
-    @OneToOne
     private Product product;
     private String more_description;
     private String warranty;
