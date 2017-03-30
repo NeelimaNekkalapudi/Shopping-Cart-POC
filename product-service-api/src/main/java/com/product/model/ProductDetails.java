@@ -1,15 +1,11 @@
 package com.product.model;
 
-import com.product.model.Product;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "productdetails")
 public class ProductDetails {
 
-    @Id
     private Long id;
-    private Product product;
+    private Long product_id;
     private String more_description;
     private String warranty;
     private String processor;
@@ -24,14 +20,6 @@ public class ProductDetails {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
     }
 
     public String getMore_description() {
@@ -74,11 +62,18 @@ public class ProductDetails {
         this.store_num = store_num;
     }
 
+    public Long getProduct_id() {
+        return product_id;
+    }
+
+    public void setProduct_id(Long product_id) {
+        this.product_id = product_id;
+    }
+
     @Override
     public String toString() {
         return "ProductDetails{" +
                 "id=" + id +
-                ", product=" + product +
                 ", more_description='" + more_description + '\'' +
                 ", warranty='" + warranty + '\'' +
                 ", processor='" + processor + '\'' +

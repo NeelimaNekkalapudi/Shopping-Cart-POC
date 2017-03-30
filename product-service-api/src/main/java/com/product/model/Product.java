@@ -7,7 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Product {
 
     @Id
-    private String id;
+    private String _id;
+    private Long id;
     private String epid;
     private String name;
     private String description;
@@ -22,15 +23,25 @@ public class Product {
     private int active;
     private String contract;
     private String store;
+    private int quantity;
+    private ProductDetails product_detail;
 
     public Product(){}
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getEpid() {
@@ -143,6 +154,22 @@ public class Product {
 
     public void setStore(String store) {
         this.store = store;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public ProductDetails getProduct_detail() {
+        return product_detail;
+    }
+
+    public void setProduct_detail(ProductDetails product_detail) {
+        this.product_detail = product_detail;
     }
 
     @Override

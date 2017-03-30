@@ -9,11 +9,13 @@ public interface ProductRepository extends CrudRepository<Product,Long> {
 
     List<Product> findBySkuidIgnoreCaseContaining(String keyword);
 
-    void delete(Product deleted);
+    Product findById(Long id);
+
+    /*void delete(Product deleted);
 
     List<Product> findAll();
 
     Product findOne(Long id);
 
-    Product save(Product saved);
+    Product save(Product saved);*/
 }

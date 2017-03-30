@@ -32,7 +32,8 @@ public class ProductServiceImpl implements ProductService {
         Product product = null;
 
         try {
-            product = productRepository.findOne(id);
+        //    product = productRepository.findOne(id);
+            product = productRepository.findById(id);
         }catch (Exception e){
 
         }
