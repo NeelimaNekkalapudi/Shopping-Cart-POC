@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      database: accessory_service
+      host: localhost
+      port: 27017
+
+server:
+  port: 7777
