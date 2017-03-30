@@ -1,5 +1,5 @@
-app.controller('ProductController',['$scope','$http', '$location','cartFactory','SERVER_PORT','SERVICE_URL',
-                            function($scope,$http, $location,  cartFactory,SERVER_PORT, SERVICE_URL){
+app.controller('ProductController',['$scope','$http', '$location','cartFactory','PRODUCTS_SERVER_PORT','SERVICE_URL',
+                            function($scope,$http, $location,  cartFactory,PRODUCTS_SERVER_PORT, SERVICE_URL){
 
       $scope.productList = "";
       $scope.viewby = 3;
@@ -23,11 +23,11 @@ app.controller('ProductController',['$scope','$http', '$location','cartFactory',
         console.log('Inside the ProductController::after $scope.token====='+ $scope.token);
         $scope.showLoadder = true;
          
-       var url = SERVER_PORT+SERVICE_URL.PRODUCTS_URL;
+       var url = PRODUCTS_SERVER_PORT+SERVICE_URL.PRODUCTS_URL;
        var method = 'GET';
 
        if($scope.productSkuId != undefined){
-          url = SERVER_PORT+SERVICE_URL.PRODUCTS_SKU_URL+$scope.productSkuId;
+          url = PRODUCTS_SERVER_PORT+SERVICE_URL.PRODUCTS_SKU_URL+$scope.productSkuId;
           method = 'GET';
        }
 

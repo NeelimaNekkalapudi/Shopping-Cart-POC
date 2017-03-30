@@ -20,7 +20,8 @@ app.controller('CartController',['$scope','$location','$http','cartFactory',    
                }else{
                 cartFactory.getCartProductDetails(currentCartItem[i].id).then(function success(response){
                   console.log(response.data);
-                  var result = response.data[0];
+                  //var result = response.data[0];
+                  var result = response.data;
                   result.quantity = 1;
                   $scope.totalCartAmount = $scope.totalCartAmount + parseFloat(result['sale_price']);
                   $scope.cartItemsDetails.push(result);

@@ -1,4 +1,4 @@
-app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory', function($http,SERVER_PORT,SERVICE_URL,tokenFactory){
+app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','PRODUCTS_SERVER_PORT', function($http,SERVER_PORT,SERVICE_URL,tokenFactory,PRODUCTS_SERVER_PORT){
 
     console.log("Inside the cartFactory======================");
 
@@ -92,7 +92,7 @@ app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory', f
 
         getCartProductDetails: function(id){
             console.log('Inside Cartservice => getCartProductDetails ====================');
-           var url = SERVER_PORT+SERVICE_URL.PRODUCT_DETAILS_URL+id;
+           var url = PRODUCTS_SERVER_PORT+SERVICE_URL.PRODUCT_DETAILS_URL+id;
 
            return $http({
                 method:'GET',
