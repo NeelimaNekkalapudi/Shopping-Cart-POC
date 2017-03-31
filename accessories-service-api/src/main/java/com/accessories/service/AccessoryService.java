@@ -15,4 +15,6 @@ public interface AccessoryService {
 
     List<Accessory> searchAccessories(String keyword);
 
+    void saveNewAccessory(Accessory accessory);
+
 }

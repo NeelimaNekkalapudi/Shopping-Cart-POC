@@ -3,10 +3,7 @@ package com.accessories.controller;
 import com.accessories.model.Accessory;
 import com.accessories.service.AccessoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -47,5 +44,11 @@ public class AccessoryController {
         List<Accessory> accessories = null;
         accessories = service.searchAccessories(keyword);
         return accessories;
+    }
+
+    @RequestMapping(value = "/newaccessories",method = RequestMethod.POST)
+    public void saveNewAccessory(@RequestBody Accessory accessory)
+    {
+        service.saveNewAccessory(accessory);
     }
 }
