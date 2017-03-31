@@ -1,0 +1,12 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yrodda/Spring-Boot-Config.git
+          search-paths: ConfigInfo
+  application:
+    name: configuration-service
