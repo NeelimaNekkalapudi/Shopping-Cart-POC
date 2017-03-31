@@ -1,12 +1,12 @@
 //Controller for handling Personal Information Details
-app.controller('PersonalInfoController', ['$rootScope','$scope', '$location','cartFactory', '$http','SERVER_PORT','SERVICE_URL','tokenFactory', function($rootScope,$scope, $location, cartFactory,$http,SERVER_PORT,SERVICE_URL,tokenFactory){
+app.controller('PersonalInfoController', ['$rootScope','$scope', '$location','cartFactory', '$http','SERVER_PORT','SERVICE_URL','tokenFactory','CHECKOUT_SERVER_PORT', function($rootScope,$scope, $location, cartFactory,$http,SERVER_PORT,SERVICE_URL,tokenFactory,CHECKOUT_SERVER_PORT){
   var auth_token = tokenFactory.token();
     console.info('Inside personalInfoController ===================');
     $scope.totalCartSize =  cartFactory.totalCartSize
 
     $scope.getCreditratingtypes = function(){
         console.log("Inside PersonalInfoController =>getCreditratingtypes");
-        var url = SERVER_PORT+SERVICE_URL.CREDIT_TRATING_TYPES;
+        var url = CHECKOUT_SERVER_PORT+SERVICE_URL.CREDIT_TRATING_TYPES;
 
         $http({
             method:'GET',

@@ -7,8 +7,8 @@ app.constant('SERVICE_URL', {
     "CHECKOUT_URL":"/checkout/submit/all/",
     "CREDIT_TRATING_TYPES":"/checkout/creditratingtypes/",
     "ACCESSORY_DETAILS_URL":"/accessories/details/",
-    "SAVE_PERSONALINFO_URL":"/checkout/personalinfo/",
-    "SAVE_BILLSHIPINFO_URL":"/checkout/billandship/",
+    "SAVE_PERSONALINFO_URL":"/checkout/personalinfo",
+    "SAVE_BILLSHIPINFO_URL":"/checkout/billandship",
     "SAVE_CREDITRATING_URL":"/checkout/creditinfo/",
-    "GET_DOWNSTREAMACC_URL":"/accessories/search/downstream/",
+    "GET_DOWNSTREAMACC_URL":"/accessories/search/downstream/"
 });

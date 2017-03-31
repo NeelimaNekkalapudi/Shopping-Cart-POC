@@ -1,4 +1,4 @@
-app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','PRODUCTS_SERVER_PORT', function($http,SERVER_PORT,SERVICE_URL,tokenFactory,PRODUCTS_SERVER_PORT){
+app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','PRODUCTS_SERVER_PORT','CHECKOUT_SERVER_PORT', function($http,SERVER_PORT,SERVICE_URL,tokenFactory,PRODUCTS_SERVER_PORT,CHECKOUT_SERVER_PORT){
 
     console.log("Inside the cartFactory======================");
 
@@ -119,7 +119,7 @@ app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','P
         },
         savePersonalInfo: function(personalInfo){
             console.log('Inside Cartservice => savePersonalInfo ====================');
-           var url = SERVER_PORT+SERVICE_URL.SAVE_PERSONALINFO_URL;
+           var url = CHECKOUT_SERVER_PORT+SERVICE_URL.SAVE_PERSONALINFO_URL;
 
            return $http({
                 method:'POST',
@@ -133,7 +133,7 @@ app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','P
         },
         saveBillShipInfo: function(shippingInfo){
             console.log('Inside Cartservice => saveBillShipInfo ====================');
-           var url = SERVER_PORT+SERVICE_URL.SAVE_BILLSHIPINFO_URL;
+           var url = CHECKOUT_SERVER_PORT+SERVICE_URL.SAVE_BILLSHIPINFO_URL;
 
            return $http({
                 method:'POST',

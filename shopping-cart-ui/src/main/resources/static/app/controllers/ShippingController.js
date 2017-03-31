@@ -1,5 +1,5 @@
-app.controller('ShippingController',['$scope','cartFactory','$http','SERVER_PORT','SERVICE_URL','tokenFactory','$location',
-                                      function($scope,cartFactory,$http,SERVER_PORT,SERVICE_URL,tokenFactory,$location){
+app.controller('ShippingController',['$scope','cartFactory','$http','SERVER_PORT','SERVICE_URL','tokenFactory','$location','CHECKOUT_SERVER_PORT',
+                                      function($scope,cartFactory,$http,SERVER_PORT,SERVICE_URL,tokenFactory,$location,CHECKOUT_SERVER_PORT){
 $scope.stateList = ["AL","AK","AZ","AR","CA","CO"];
 $scope.zipPattern = /^(\d{5}-\d{4}|\d{5})$/;
 $scope.shippingInfo = cartFactory.getShipBillInfo(); 
@@ -46,7 +46,7 @@ $scope.showBilling = function(){
 $scope.getCreditRatingtypes = function(){
         var auth_token = "Adf"//cartFactory.auth_token;
         console.log("Inside CreditController =>getCreditRatingtypes");
-        var url = SERVER_PORT+SERVICE_URL.CREDIT_TRATING_TYPES;
+        var url = CHECKOUT_SERVER_PORT+SERVICE_URL.CREDIT_TRATING_TYPES;
         console.log("Authorization"+auth_token);
 
         $http({
