@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/yrodda/Spring-Boot-Config.git
+          uri: https://github.com/yrodda/Shopping-Cart-POC.git
           search-paths: ConfigInfo
   application:
     name: configuration-service
