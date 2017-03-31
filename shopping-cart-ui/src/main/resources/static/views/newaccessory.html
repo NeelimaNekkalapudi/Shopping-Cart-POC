@@ -1,0 +1,64 @@
+<tmo-menu></tmo-menu>
+
+<div style="padding-top:20px;">
+    <h3 class="caption-title" style="padding-left: 100px"> New Accessory Details </h3>
+</div>
+<div class="content-area" ng-controller="CreateNewAccessoryController" style="margin: 0 auto">
+
+    <section class="page-section with-sidebar sub-page">
+        <div class="container">
+            <form class="form-horizontal" class="css-form">
+                <div style="display: inline-block">
+                    <label style="width: 100px">epid:</label>
+                    <input type="text" ng-required="true" ng-model="myForm.epid"/>
+
+                    <label style="width: 100px">name:</label>
+                    <input type="text" ng-required="true" ng-model="myForm.name"/>
+
+                    <label style="width: 100px">description: </label>
+                    <input type="text" ng-model="myForm.desc"/>
+
+                    <label style="width: 100px"> retail_price:</label>
+                    <input type="number" ng-required="true" ng-model="myForm.rp" />
+
+                    <label style="width: 100px">sale_price:</label>
+                    <input type="number" ng-required="true" ng-model="myForm.sp"/>
+
+                    <label style="width: 100px">promotion:</label>
+                    <input type="number" ng-model="myForm.promotion"/>
+
+                    <label style="width: 100px">size:</label>
+                    <input type="text" ng-required="true" ng-model="myForm.size"/>
+
+                    <label style="width: 100px">configuration:</label>
+                    <input type="text" ng-model="myForm.config"/>
+
+                    <label style="width: 100px">color:</label>
+                    <input type="text" ng-model="myForm.color"/>
+
+                    <label style="width: 100px">skuid:</label>
+                    <input type="text" ng-model="myForm.skuid"/>
+
+                    <label style="width: 100px">picture:</label>
+                    <input type="text" ng-model="myForm.picture"/>
+
+                    <label style="width: 100px">active:</label>
+                    <input type="number" ng-model="myForm.active"/>
+
+                     <label style="width: 100px">contract:</label>
+                    <input type="text" ng-model="myForm.contract"/>
+
+                    <label style="width: 100px">store:</label>
+                    <input type="text" ng-model="myForm.store"/>
+
+                </div>
+                <div style="text-align: center" >
+                    <input type="button" value="Submit" style="width: 100px;" ng-click="saveNewAccessory()"/>
+                </div>
+
+
+            </form>
+        </div>
+    </section>
+
+</div>

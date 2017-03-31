@@ -1,5 +1,5 @@
-app.controller('AccessoryController',['$scope','$http','$location','cartFactory','SERVER_PORT','SERVICE_URL','$routeParams',
-                                       function($scope,$http, $location,cartFactory,SERVER_PORT, SERVICE_URL,$routeParams){
+app.controller('AccessoryController',['$scope','$http','$location','cartFactory','ACCESSORIES_SERVER_PORT','SERVICE_URL','$routeParams',
+                                       function($scope,$http, $location,cartFactory,ACCESSORIES_SERVER_PORT, SERVICE_URL,$routeParams){
       $scope.accesoryList = "";
       $scope.viewby = 3;
       $scope.totalItems = $scope.accesoryList.length;
@@ -8,7 +8,7 @@ app.controller('AccessoryController',['$scope','$http','$location','cartFactory'
       $scope.maxSize = 5; //Number of pager buttons to show
       $scope.noResults = false;
       $scope.totalCartSize =  cartFactory.totalCartSize
-      var auth_token = cartFactory.auth_token;
+      var auth_token = "abc";//cartFactory.auth_token;
       $scope.accessoryDetails = "";
       $scope.sizeList = ["2 Meter","3 Meter","6 Meter"];
       $scope.colorList =["Gold","White","Grey"];
@@ -38,12 +38,13 @@ app.controller('AccessoryController',['$scope','$http','$location','cartFactory'
     //Get all accessories => $http call
     $scope.getAccessories =function(){
       if(!epid){
-      $scope.token = cartFactory.auth_token;
+      $scope.token = "abc";//cartFactory.auth_token;
       console.log('Inside the ProductController::after $scope.token====='+ $scope.token);
        $scope.showLoadder = true;
-       var url = SERVER_PORT+SERVICE_URL.ACCESSORY_URL;
+       var url = ACCESSORIES_SERVER_PORT+SERVICE_URL.ACCESSORY_URL;
        if($scope.skuId != undefined){
-          url = url+"/"+$scope.skuId;
+           url = ACCESSORIES_SERVER_PORT+SERVICE_URL.ACCESSORY_DETAILS_URL;
+          url += $scope.skuId;
        }
        $http({
         method:'GET',
@@ -72,7 +73,7 @@ app.controller('AccessoryController',['$scope','$http','$location','cartFactory'
     $scope.getAccessoryDetails = function(accessoryId){
         cartFactory.getAccessoryDetails(accessoryId).then(function success(response){
           console.log(response.data);
-          var result = response.data[0];
+          var result = response.data;
           if(result != undefined) {
             result.quantity = 1;
             cartFactory.accessoryDetails = result;

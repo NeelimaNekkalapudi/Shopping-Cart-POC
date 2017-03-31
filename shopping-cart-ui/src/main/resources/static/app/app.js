@@ -59,6 +59,9 @@ app.config(function($routeProvider)
       }).when('/creditInformation',{
           templateUrl: 'views/creditinformation.html',
           controller: 'CreditController'
+      }).when('/createNewAccessory',{
+          templateUrl: 'views/newaccessory.html',
+          controller:'CreateNewAccessoryController'
       }).otherwise({
         redirectTo: '/welcome'
       });
