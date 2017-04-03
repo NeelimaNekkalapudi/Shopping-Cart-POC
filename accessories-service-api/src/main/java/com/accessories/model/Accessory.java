@@ -24,6 +24,7 @@ public class Accessory {
     private int active;
     private String contract;
     private String store;
+    private AccessoryDetails accessory_detail;
 
     public Long getId() {
         return id;
@@ -143,5 +144,13 @@ public class Accessory {
 
     public void setStore(String store) {
         this.store = store;
+    }
+
+    public AccessoryDetails getAccessory_detail() {
+        return accessory_detail;
+    }
+
+    public void setAccessory_detail(AccessoryDetails accessory_detail) {
+        this.accessory_detail = accessory_detail;
     }
 }

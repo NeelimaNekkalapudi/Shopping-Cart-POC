@@ -20,11 +20,13 @@
         </div>
         <div class="col-md-3">
             <div class="row" style="margin-top:2%">
-              <span class="caption-title" >Vendor : {{item['product_detail'].vendor? item['product_detail'].vendor:'N/A'}}</span>
+              <span class="caption-title" ng-show="!item.isAccessory" >Vendor : {{item['product_detail'].vendor? item['product_detail'].vendor:'N/A'}}</span>
+              <span class="caption-title" ng-show="item.isAccessory" >Vendor : {{item['accessory_detail'].vendor? item['accessory_detail'].vendor:'N/A'}}</span>
 
             </div>
             <div class="row">
-              <span class="caption-title">Warranty : {{item['product_detail'].warranty?item['product_detail'].warranty:'N/A'}}</span>
+              <span class="caption-title" ng-show="!item.isAccessory">Warranty : {{item['product_detail'].warranty?item['product_detail'].warranty:'N/A'}}</span>
+                <span class="caption-title" ng-show="item.isAccessory">Warranty : {{item['accessory_detail'].warranty?item['accessory_detail'].warranty:'N/A'}}</span>
             </div>
 
         </div>
@@ -49,9 +51,14 @@
     <div class="caption-text-billing"> </div>
     <table class="table">
         <tbody><tr>
-            <td class="ez-slat-tabled"><span class="hidden-xs">
-              Description: {{item['product_detail']['more_description']?item['product_detail']['more_description']:item['description']}}
-            </span></td>
+            <td class="ez-slat-tabled">
+                <span class="hidden-xs" ng-show="!item.isAccessory">
+                     Description: {{item['product_detail']['more_description']?item['product_detail']['more_description']:item['description']}}
+                </span>
+                 <span class="hidden-xs" ng-show="item.isAccessory">
+                     Description: {{item['accessory_detail']['more_description']?item['accessory_detail']['more_description']:item['description']}}
+                </span>
+            </td>
         </tr>
     </tbody></table>
 </div>

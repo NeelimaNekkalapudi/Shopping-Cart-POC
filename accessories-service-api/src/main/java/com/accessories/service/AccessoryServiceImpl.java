@@ -41,4 +41,9 @@ public class AccessoryServiceImpl implements AccessoryService {
         //accessories = repository.searchAccessoriesByKeyword(keyword);
         return accessories;
     }
+
+    public void saveNewAccessory(Accessory accessory)
+    {
+        repository.save(accessory);
+    }
 }

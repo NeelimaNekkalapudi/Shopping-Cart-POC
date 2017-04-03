@@ -7,28 +7,28 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class AccessoryDetails {
 
     @Id
-    private String id;
-    private Accessory accessory;
+    private Long id;
+    private Long accessory_id;
     private String more_description;
     private String warranty;
     private String processor;
     private String vendor;
     private String store_num;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Accessory getAccessory() {
-        return accessory;
+    public Long getAccessory_id() {
+        return accessory_id;
     }
 
-    public void setAccessory(Accessory accessory) {
-        this.accessory = accessory;
+    public void setAccessory_id(Long accessory_id) {
+        this.accessory_id = accessory_id;
     }
 
     public String getMore_description() {
