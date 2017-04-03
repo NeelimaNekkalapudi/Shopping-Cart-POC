@@ -1,0 +1,9 @@
+server:
+  port: 8182
+
+spring:
+  data:
+    mongodb:
+      database: order_details
+      host: localhost
+      port: 27017
