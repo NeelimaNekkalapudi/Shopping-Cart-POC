@@ -2,6 +2,7 @@ package com.CheckOut;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +12,7 @@ import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.core.MultivaluedMap;
 import java.io.IOException;
 
-@SpringBootApplication
+@SpringCloudApplication
 @EnableMongoRepositories("com.CheckOut.repository")
 public class CheckOutApplication {
 
@@ -19,7 +20,7 @@ public class CheckOutApplication {
 		SpringApplication.run(CheckOutApplication.class, args);
 	}
 
-    @Component
+   /* @Component
     public class SimpleCORSFilter implements ContainerResponseFilter {
         @Override
         public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
@@ -28,5 +29,5 @@ public class CheckOutApplication {
             headers.add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
             headers.add("Access-Control-Allow-Headers", "*");
         }
-    }
+    }*/
 }
