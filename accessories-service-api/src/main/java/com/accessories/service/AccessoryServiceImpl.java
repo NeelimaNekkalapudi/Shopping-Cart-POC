@@ -46,4 +46,9 @@ public class AccessoryServiceImpl implements AccessoryService {
     {
         repository.save(accessory);
     }
+
+    public List<Accessory> findAccessoriesByEpid(String sku)
+    {
+        return repository.findByEpidIgnoreCaseContaining(sku);
+    }
 }
