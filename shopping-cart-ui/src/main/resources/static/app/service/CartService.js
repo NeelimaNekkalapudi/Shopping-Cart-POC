@@ -136,7 +136,7 @@ app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','P
            var url = CHECKOUT_SERVER_PORT+SERVICE_URL.SAVE_BILLSHIPINFO_URL;
 
            return $http({
-                method:'POST',
+                method:'PATCH',
                 url: url,
                 headers: {
                 "Content-Type": "application/json",
