@@ -13,6 +13,8 @@ public interface AccessoryService {
 
     List<Accessory> getAllAccessoriesMatchingSku(String sku);
 
+    List<Accessory> findAccessoriesByEpid(String sku);
+
     List<Accessory> searchAccessories(String keyword);
 
     void saveNewAccessory(Accessory accessory);

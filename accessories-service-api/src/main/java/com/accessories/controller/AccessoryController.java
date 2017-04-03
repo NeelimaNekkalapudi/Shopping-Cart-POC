@@ -34,7 +34,8 @@ public class AccessoryController {
     public List<Accessory> getAllAccessoriesMatchingSku(@PathVariable("sku") String sku)
     {
         List<Accessory> accessories = null;
-        accessories = service.getAllAccessoriesMatchingSku(sku);
+        //accessories = service.getAllAccessoriesMatchingSku(sku);
+        accessories = service.findAccessoriesByEpid(sku);
         return accessories;
     }
 

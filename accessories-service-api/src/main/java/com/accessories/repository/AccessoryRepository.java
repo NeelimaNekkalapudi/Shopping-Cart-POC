@@ -13,6 +13,8 @@ public interface AccessoryRepository extends CrudRepository<Accessory,Long>
 
     List<Accessory> findBySkuid(String skuid);
 
+    List<Accessory> findByEpidIgnoreCaseContaining(String epid);
+
    // List<Accessory> searchAccessoriesByKeyword(String sku);
 
 }

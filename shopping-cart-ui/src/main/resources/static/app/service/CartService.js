@@ -1,4 +1,4 @@
-app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','PRODUCTS_SERVER_PORT','CHECKOUT_SERVER_PORT', function($http,SERVER_PORT,SERVICE_URL,tokenFactory,PRODUCTS_SERVER_PORT,CHECKOUT_SERVER_PORT){
+app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','PRODUCTS_SERVER_PORT','CHECKOUT_SERVER_PORT','ACCESSORIES_SERVER_PORT', function($http,SERVER_PORT,SERVICE_URL,tokenFactory,PRODUCTS_SERVER_PORT,CHECKOUT_SERVER_PORT,ACCESSORIES_SERVER_PORT){
 
     console.log("Inside the cartFactory======================");
 
@@ -161,7 +161,7 @@ app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','P
         },
         getDownstreamAcc: function(epid){
              console.log('Inside Cartservice => getDownstreamAcc ====================');
-           var url = SERVER_PORT+SERVICE_URL.GET_DOWNSTREAMACC_URL+epid;
+           var url = ACCESSORIES_SERVER_PORT+SERVICE_URL.GET_DOWNSTREAMACC_URL+epid;
 
            return $http({
                 method:'GET',
