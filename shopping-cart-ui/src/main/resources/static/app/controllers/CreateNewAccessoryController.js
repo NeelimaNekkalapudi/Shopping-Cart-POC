@@ -2,9 +2,10 @@ app.controller('CreateNewAccessoryController',['$scope','$http','ACCESSORIES_SER
                                     function($scope,$http,ACCESSORIES_SERVER_PORT,SERVICE_URL){
     $scope.myForm = {};
 
-    $scope.saveNewAccessory = function()
-    {
-        var accessory ={"id": 16,
+    $scope.saveNewAccessory = function(isValid) {
+        if (isValid) {
+            var accessory = {
+                "id": 16,
                 "epid": $scope.myForm.epid,
                 "availability": "AVAILABLE",
                 "name": $scope.myForm.name,
@@ -32,26 +33,29 @@ app.controller('CreateNewAccessoryController',['$scope','$http','ACCESSORIES_SER
             };
 
 
-        var url = ACCESSORIES_SERVER_PORT+SERVICE_URL.NEW_ACCESSORY_URL;
+            var url = ACCESSORIES_SERVER_PORT + SERVICE_URL.NEW_ACCESSORY_URL;
 
-        $http({
-            method: 'POST',
-            url:url,
-            headers:{
-                "Content-Type": "application/json"
-            },
-            data:JSON.stringify(accessory)
+            $http({
+                method: 'POST',
+                url: url,
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                data: JSON.stringify(accessory)
 
-        }).then(
-            function success(response)
-            {
-                console.log("successfully saved");
-            },
-            function error(response)
-            {
-               console.log("error...");
-            }
-        )
+            }).then(
+                function success(response) {
+                    console.log("successfully saved");
+                },
+                function error(response) {
+                    console.log("error...");
+                }
+            )
 
+        }
+        else
+        {
+            alert("Please fill the form");
+        }
     }
 }]);

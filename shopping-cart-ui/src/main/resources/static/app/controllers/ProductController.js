@@ -1,5 +1,5 @@
-app.controller('ProductController',['$scope','$http', '$location','cartFactory','PRODUCTS_SERVER_PORT','SERVICE_URL',
-                            function($scope,$http, $location,  cartFactory,PRODUCTS_SERVER_PORT, SERVICE_URL){
+app.controller('ProductController',['$scope','$http', '$location','cartFactory','PRODUCTS_SERVER_PORT','SERVICE_URL','$rootScope',
+                            function($scope,$http, $location,  cartFactory,PRODUCTS_SERVER_PORT, SERVICE_URL, $rootScope){
 
       $scope.productList = "";
       $scope.viewby = 3;
@@ -15,6 +15,8 @@ app.controller('ProductController',['$scope','$http', '$location','cartFactory',
       console.log('Inside the ProductController=======================');
       var auth_token = "asd";//cartFactory.auth_token;
       $scope.productDetails = "";
+      $scope.username = $rootScope.username;
+
 
 
     $scope.getproducts =function(){
