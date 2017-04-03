@@ -4,14 +4,8 @@ import com.CheckOut.model.*;
 import com.CheckOut.repository.PersonalInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.container.ContainerRequestContext;
-import javax.ws.rs.container.ContainerResponseContext;
-import javax.ws.rs.container.ContainerResponseFilter;
-import javax.ws.rs.core.MultivaluedMap;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -31,17 +25,17 @@ public class PersonalInfoController {
     {
         Order order = new Order();
         order.setId(String.valueOf(nextValue()));
-        order.setFirstName(personalInfo.getFirstName());
-        order.setLastName(personalInfo.getLastName());
+        order.setFirstname(personalInfo.getFirstname());
+        order.setLastname(personalInfo.getLastname());
         order.setEmail(personalInfo.getEmail());
         order.setPhone(personalInfo.getPhone());
-        order.setCurrentCarrier(personalInfo.getCurrentCarrier());
+        order.setCurrentcarrier(personalInfo.getCurrentcarrier());
 
         personalInfoRepository.save(order);
 
         PersonalInformationResponse personalInformationResponse = new PersonalInformationResponse();
 
-        ArrayList<OrderDetails> orderDetails = new ArrayList<>();
+        ArrayList<OrderDetails> orderDetails = new ArrayList();
         OrderDetails orderDetails1 = new OrderDetails();
         orderDetails1.setOrderId(String.valueOf(nextValue()));
         orderDetails.add(orderDetails1);

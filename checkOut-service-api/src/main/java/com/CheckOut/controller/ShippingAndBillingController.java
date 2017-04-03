@@ -24,21 +24,21 @@ public class ShippingAndBillingController {
     public void updateOrder(@RequestBody AddressDetails address) {
        /* if(address.getOrderId()!= null) {*/
             Order billingOrder = shippingAndBillingRepository.getOrderById(address.getOrderId());
-            billingOrder.setBillAddress1(address.getBillingAddress1());
-            billingOrder.setBillAddress2(address.getBillingAddress2());
-            billingOrder.setBillCity(address.getBillingCity());
-            billingOrder.setBillState(address.getBillingState());
-            billingOrder.setBillZip(address.getBillingZip());
-            billingOrder.setShipAddress1(address.getShippingAddress1());
-            billingOrder.setShipAddress2(address.getShippingAddress2());
-            billingOrder.setShipCity(address.getShippingCity());
-            billingOrder.setShipState(address.getShippingState());
-            billingOrder.setShipZip(address.getShippingZip());
-            billingOrder.setCartId("1");
-            billingOrder.setCreditsCoreRangeType(address.getCreditsCoreRangeType());
-            billingOrder.setCustomerName(address.getCustomerName());
-            billingOrder.setCardNo(address.getCardNo());
-            billingOrder.setExpiryDate(address.getExpiryDate());
+            billingOrder.setBilladdress1(address.getBilladdress1());
+            billingOrder.setBilladdress2(address.getBilladdress2());
+            billingOrder.setBillcity(address.getBillcity());
+            billingOrder.setBillstate(address.getBillstate());
+            billingOrder.setBillzip(address.getBillzip());
+            billingOrder.setShipaddress1(address.getShipaddress1());
+            billingOrder.setShipaddress2(address.getShipaddress2());
+            billingOrder.setShipcity(address.getShipcity());
+            billingOrder.setShipstate(address.getShipstate());
+            billingOrder.setShipzip(address.getShipzip());
+            billingOrder.setCart_id("1");
+            billingOrder.setCreditscorerangetype(address.getCreditscorerangetype());
+            billingOrder.setCustomername(address.getCustomername());
+            billingOrder.setCardno(address.getCardno());
+            billingOrder.setExpirydate(address.getExpirydate());
             billingOrder.setCvv(address.getCvv());
             billingOrder.setStore(address.getStore());
       /*  }*/

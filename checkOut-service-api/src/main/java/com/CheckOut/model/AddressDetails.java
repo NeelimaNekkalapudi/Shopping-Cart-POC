@@ -7,166 +7,150 @@ public class AddressDetails {
 
     public String orderId;
 
-    public String shipType;
+    public String shiptype;
 
-    public String shippingAddress1;
+    public String shipaddress1;
 
-    public String shippingAddress2;
+    public String shipaddress2;
 
-    public String shippingCity;
+    public String shipcity;
 
-    public String shippingState;
+    public String shipstate;
 
-    public String shippingZip;
+    public String shipzip;
 
-    public String billingAddress1;
+    public String billaddress1;
 
-    public String billingAddress2;
+    public String billaddress2;
 
-    public String billingCity;
+    public String billcity;
 
-    public String billingState;
+    public String getBillstate() {
+        return billstate;
+    }
 
-    public String billingZip;
-
-    public String creditsCoreRangeType;
-
-    public String customerName;
-
-    public String cardNo;
-
-    public String expiryDate;
-
-    public String cvv;
-
-    public String store;
+    public void setBillstate(String billstate) {
+        this.billstate = billstate;
+    }
 
     public String getOrderId() {
         return orderId;
-    }
-
-    public String getShipType() {
-        return shipType;
-    }
-
-    public void setShipType(String shipType) {
-        this.shipType = shipType;
     }
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
 
-    public String getShippingAddress1() {
-        return shippingAddress1;
+    public String getShiptype() {
+        return shiptype;
     }
 
-    public void setShippingAddress1(String shippingAddress1) {
-        this.shippingAddress1 = shippingAddress1;
+    public void setShiptype(String shiptype) {
+        this.shiptype = shiptype;
     }
 
-    public String getShippingAddress2() {
-        return shippingAddress2;
+    public String getShipaddress1() {
+        return shipaddress1;
     }
 
-    public void setShippingAddress2(String shippingAddress2) {
-        this.shippingAddress2 = shippingAddress2;
+    public void setShipaddress1(String shipaddress1) {
+        this.shipaddress1 = shipaddress1;
     }
 
-    public String getShippingCity() {
-        return shippingCity;
+    public String getShipaddress2() {
+        return shipaddress2;
     }
 
-    public void setShippingCity(String shippingCity) {
-        this.shippingCity = shippingCity;
+    public void setShipaddress2(String shipaddress2) {
+        this.shipaddress2 = shipaddress2;
     }
 
-    public String getShippingState() {
-        return shippingState;
+    public String getShipcity() {
+        return shipcity;
     }
 
-    public void setShippingState(String shippingState) {
-        this.shippingState = shippingState;
+    public void setShipcity(String shipcity) {
+        this.shipcity = shipcity;
     }
 
-    public String getShippingZip() {
-        return shippingZip;
+    public String getShipstate() {
+        return shipstate;
     }
 
-    public void setShippingZip(String shippingZip) {
-        this.shippingZip = shippingZip;
+    public void setShipstate(String shipstate) {
+        this.shipstate = shipstate;
     }
 
-    public String getBillingAddress1() {
-        return billingAddress1;
+    public String getShipzip() {
+        return shipzip;
     }
 
-    public void setBillingAddress1(String billingAddress1) {
-        this.billingAddress1 = billingAddress1;
+    public void setShipzip(String shipzip) {
+        this.shipzip = shipzip;
     }
 
-    public String getBillingAddress2() {
-        return billingAddress2;
+    public String getBilladdress1() {
+        return billaddress1;
     }
 
-    public void setBillingAddress2(String billingAddress2) {
-        this.billingAddress2 = billingAddress2;
+    public void setBilladdress1(String billaddress1) {
+        this.billaddress1 = billaddress1;
     }
 
-    public String getBillingCity() {
-        return billingCity;
+    public String getBilladdress2() {
+        return billaddress2;
     }
 
-    public void setBillingCity(String billingCity) {
-        this.billingCity = billingCity;
+    public void setBilladdress2(String billaddress2) {
+        this.billaddress2 = billaddress2;
     }
 
-    public String getBillingState() {
-        return billingState;
+    public String getBillcity() {
+        return billcity;
     }
 
-    public void setBillingState(String billingState) {
-        this.billingState = billingState;
+    public void setBillcity(String billcity) {
+        this.billcity = billcity;
     }
 
-    public String getBillingZip() {
-        return billingZip;
+    public String getBillzip() {
+        return billzip;
     }
 
-    public void setBillingZip(String billingZip) {
-        this.billingZip = billingZip;
+    public void setBillzip(String billzip) {
+        this.billzip = billzip;
     }
 
-    public String getCreditsCoreRangeType() {
-        return creditsCoreRangeType;
+    public String getCreditscorerangetype() {
+        return creditscorerangetype;
     }
 
-    public void setCreditsCoreRangeType(String creditsCoreRangeType) {
-        this.creditsCoreRangeType = creditsCoreRangeType;
+    public void setCreditscorerangetype(String creditscorerangetype) {
+        this.creditscorerangetype = creditscorerangetype;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public String getCustomername() {
+        return customername;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setCustomername(String customername) {
+        this.customername = customername;
     }
 
-    public String getCardNo() {
-        return cardNo;
+    public String getCardno() {
+        return cardno;
     }
 
-    public void setCardNo(String cardNo) {
-        this.cardNo = cardNo;
+    public void setCardno(String cardno) {
+        this.cardno = cardno;
     }
 
-    public String getExpiryDate() {
-        return expiryDate;
+    public String getExpirydate() {
+        return expirydate;
     }
 
-    public void setExpiryDate(String expiryDate) {
-        this.expiryDate = expiryDate;
+    public void setExpirydate(String expirydate) {
+        this.expirydate = expirydate;
     }
 
     public String getCvv() {
@@ -184,4 +168,23 @@ public class AddressDetails {
     public void setStore(String store) {
         this.store = store;
     }
+
+    public String billstate;
+
+    public String billzip;
+
+    public String creditscorerangetype;
+
+    public String customername;
+
+    public String cardno;
+
+    public String expirydate;
+
+    public String cvv;
+
+    public String store;
+
+
+
 }

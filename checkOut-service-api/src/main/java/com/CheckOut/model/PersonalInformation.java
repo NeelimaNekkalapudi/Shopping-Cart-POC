@@ -7,15 +7,15 @@ public class PersonalInformation {
 
     public String orderId;
 
-    public String firstName;
+    public String firstname;
 
-    public String lastName;
+    public String lastname;
 
     public String email;
 
     public String phone;
 
-    public String currentCarrier;
+    public String currentcarrier;
 
     public String getOrderId() {
         return orderId;
@@ -25,20 +25,20 @@ public class PersonalInformation {
         this.orderId = orderId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getEmail() {
@@ -57,11 +57,11 @@ public class PersonalInformation {
         this.phone = phone;
     }
 
-    public String getCurrentCarrier() {
-        return currentCarrier;
+    public String getCurrentcarrier() {
+        return currentcarrier;
     }
 
-    public void setCurrentCarrier(String currentCarrier) {
-        this.currentCarrier = currentCarrier;
+    public void setCurrentcarrier(String currentcarrier) {
+        this.currentcarrier = currentcarrier;
     }
 }

@@ -13,82 +13,56 @@ public class Order {
     @Id
     public String id;
 
-    public String firstName;
+    public String firstname;
 
-    public String lastName;
+    public String lastname;
 
     public String email;
 
     public String phone;
 
-    public String currentCarrier;
-
-    public String shipType;
-
-    public String shipAddress1;
-
-    public String shipAddress2;
-
-    public String shipCity;
-
-    public String shipState;
-
-    public String shipZip;
-
-    public String billAddress1;
-
-    public String billAddress2;
-
-    public String billCity;
-
-    public String billState;
-
-    public String billZip;
-
-    public String cartId;
-
-    public String creditsCoreRangeType;
-
-    public String customerName;
-
-    public String cardNo;
-
-    public String expiryDate;
-
-    public String cvv;
-
-    public String store;
-
-    public String getId() {
-        return id;
+    public String getCart_id() {
+        return Cart_id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCart_id(String cart_id) {
+        Cart_id = cart_id;
     }
 
-    public String getShipType() {
-        return shipType;
+    public String Cart_id;
+
+
+
+    public String currentcarrier;
+
+    public String shiptype;
+
+    public String shipaddress1;
+
+    public String shipaddress2;
+
+    public String shipcity;
+
+    public String shipstate;
+
+    public String shipzip;
+
+    public String billaddress1;
+
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setShipType(String shipType) {
-        this.shipType = shipType;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getEmail() {
@@ -107,132 +81,132 @@ public class Order {
         this.phone = phone;
     }
 
-    public String getCurrentCarrier() {
-        return currentCarrier;
+    public String getCurrentcarrier() {
+        return currentcarrier;
     }
 
-    public void setCurrentCarrier(String currentCarrier) {
-        this.currentCarrier = currentCarrier;
+    public void setCurrentcarrier(String currentcarrier) {
+        this.currentcarrier = currentcarrier;
     }
 
-    public String getShipAddress1() {
-        return shipAddress1;
+    public String getShiptype() {
+        return shiptype;
     }
 
-    public void setShipAddress1(String shipAddress1) {
-        this.shipAddress1 = shipAddress1;
+    public void setShiptype(String shiptype) {
+        this.shiptype = shiptype;
     }
 
-    public String getShipAddress2() {
-        return shipAddress2;
+    public String getShipaddress1() {
+        return shipaddress1;
     }
 
-    public void setShipAddress2(String shipAddress2) {
-        this.shipAddress2 = shipAddress2;
+    public void setShipaddress1(String shipaddress1) {
+        this.shipaddress1 = shipaddress1;
     }
 
-    public String getShipCity() {
-        return shipCity;
+    public String getShipaddress2() {
+        return shipaddress2;
     }
 
-    public void setShipCity(String shipCity) {
-        this.shipCity = shipCity;
+    public void setShipaddress2(String shipaddress2) {
+        this.shipaddress2 = shipaddress2;
     }
 
-    public String getShipZip() {
-        return shipZip;
+    public String getShipcity() {
+        return shipcity;
     }
 
-    public void setShipZip(String shipZip) {
-        this.shipZip = shipZip;
+    public void setShipcity(String shipcity) {
+        this.shipcity = shipcity;
     }
 
-    public String getShipState() {
-        return shipState;
+    public String getShipstate() {
+        return shipstate;
     }
 
-    public void setShipState(String shipState) {
-        this.shipState = shipState;
+    public void setShipstate(String shipstate) {
+        this.shipstate = shipstate;
     }
 
-    public String getBillAddress1() {
-        return billAddress1;
+    public String getShipzip() {
+        return shipzip;
     }
 
-    public void setBillAddress1(String billAddress1) {
-        this.billAddress1 = billAddress1;
+    public void setShipzip(String shipzip) {
+        this.shipzip = shipzip;
     }
 
-    public String getBillAddress2() {
-        return billAddress2;
+    public String getBilladdress1() {
+        return billaddress1;
     }
 
-    public void setBillAddress2(String billAddress2) {
-        this.billAddress2 = billAddress2;
+    public void setBilladdress1(String billaddress1) {
+        this.billaddress1 = billaddress1;
     }
 
-    public String getBillCity() {
-        return billCity;
+    public String getBillstate() {
+        return billstate;
     }
 
-    public void setBillCity(String billCity) {
-        this.billCity = billCity;
+    public void setBillstate(String billstate) {
+        this.billstate = billstate;
     }
 
-    public String getBillState() {
-        return billState;
+    public String getBillcity() {
+        return billcity;
     }
 
-    public void setBillState(String billState) {
-        this.billState = billState;
+    public void setBillcity(String billcity) {
+        this.billcity = billcity;
     }
 
-    public String getBillZip() {
-        return billZip;
+    public String getBilladdress2() {
+        return billaddress2;
     }
 
-    public void setBillZip(String billZip) {
-        this.billZip = billZip;
+    public void setBilladdress2(String billaddress2) {
+        this.billaddress2 = billaddress2;
     }
 
-    public String getCartId() {
-        return cartId;
+    public String getBillzip() {
+        return billzip;
     }
 
-    public void setCartId(String cartId) {
-        this.cartId = cartId;
+    public void setBillzip(String billzip) {
+        this.billzip = billzip;
     }
 
-    public String getCreditsCoreRangeType() {
-        return creditsCoreRangeType;
+    public String getCreditscorerangetype() {
+        return creditscorerangetype;
     }
 
-    public void setCreditsCoreRangeType(String creditsCoreRangeType) {
-        this.creditsCoreRangeType = creditsCoreRangeType;
+    public void setCreditscorerangetype(String creditscorerangetype) {
+        this.creditscorerangetype = creditscorerangetype;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public String getCustomername() {
+        return customername;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setCustomername(String customername) {
+        this.customername = customername;
     }
 
-    public String getCardNo() {
-        return cardNo;
+    public String getCardno() {
+        return cardno;
     }
 
-    public void setCardNo(String cardNo) {
-        this.cardNo = cardNo;
+    public void setCardno(String cardno) {
+        this.cardno = cardno;
     }
 
-    public String getExpiryDate() {
-        return expiryDate;
+    public String getExpirydate() {
+        return expirydate;
     }
 
-    public void setExpiryDate(String expiryDate) {
-        this.expiryDate = expiryDate;
+    public void setExpirydate(String expirydate) {
+        this.expirydate = expirydate;
     }
 
     public String getCvv() {
@@ -250,4 +224,35 @@ public class Order {
     public void setStore(String store) {
         this.store = store;
     }
+
+    public String billaddress2;
+
+    public String billcity;
+
+    public String billstate;
+
+    public String billzip;
+
+    public String creditscorerangetype;
+
+    public String customername;
+
+    public String cardno;
+
+    public String expirydate;
+
+    public String cvv;
+
+    public String store;
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
 }
