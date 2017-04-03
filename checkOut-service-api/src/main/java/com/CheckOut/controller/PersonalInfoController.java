@@ -16,6 +16,7 @@ import java.util.ArrayList;
  */
 @RestController
 @RequestMapping(value = "/checkout", produces = MediaType.APPLICATION_JSON_VALUE)
+@CrossOrigin(origins = "http://localhost:8080")
 public class PersonalInfoController {
 
     @Autowired
@@ -51,8 +52,7 @@ public class PersonalInfoController {
     }
 
     @RequestMapping(value="/creditratingtypes",method = RequestMethod.GET)
-    public @ResponseBody
-    CreditRatingTypes create() {
+    public CreditRatingTypes create() {
         CreditRatingTypes creditRatingTypes = new CreditRatingTypes();
         creditRatingTypes.setError("0");
         creditRatingTypes.setMessage("Successfully Got the Credit Score Range Type from the database");

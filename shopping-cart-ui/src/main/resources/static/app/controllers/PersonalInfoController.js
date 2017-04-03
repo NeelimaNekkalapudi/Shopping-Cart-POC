@@ -50,9 +50,9 @@ app.controller('PersonalInfoController', ['$rootScope','$scope', '$location','ca
 
 
         //submit the call.
-           var url = SERVER_PORT+SERVICE_URL.CHECKOUT_URL;
+           var url = CHECKOUT_SERVER_PORT+SERVICE_URL.CHECKOUT_URL;
            $http({
-            method:'POST',
+            method:'PATCH',
             url: url,
             data: finalCart,
             headers: {
