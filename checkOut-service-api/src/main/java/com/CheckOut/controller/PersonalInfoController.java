@@ -7,7 +7,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Date;
+import java.lang.Iterable;
 
 /**
  * Created by kvajramani on 28-03-2017.
@@ -24,12 +25,22 @@ public class PersonalInfoController {
     public PersonalInformationResponse createOrder(@RequestBody PersonalInformation personalInfo)
     {
         Order order = new Order();
-        order.setId(String.valueOf(nextValue()));
+        Long count = personalInfoRepository.count();
+        if(count>0)
+        {
+            order.setId(String.valueOf(count+1));
+        }
+        else
+        {
+            order.setId(String.valueOf(1));
+        }
         order.setFirstname(personalInfo.getFirstname());
         order.setLastname(personalInfo.getLastname());
         order.setEmail(personalInfo.getEmail());
         order.setPhone(personalInfo.getPhone());
         order.setCurrentcarrier(personalInfo.getCurrentcarrier());
+        order.setCreatedAt(new Date());
+        order.setUpdatedAt(new Date());
 
         personalInfoRepository.save(order);
 
@@ -37,21 +48,20 @@ public class PersonalInfoController {
 
         ArrayList<OrderDetails> orderDetails = new ArrayList();
         OrderDetails orderDetails1 = new OrderDetails();
-        orderDetails1.setOrderId(String.valueOf(nextValue()));
         orderDetails.add(orderDetails1);
         personalInformationResponse.setOrderDetails(orderDetails);
         return personalInformationResponse;
 
     }
 
-
-    public static int nextValue() {
-        AtomicInteger counter = new AtomicInteger();
-        return counter.incrementAndGet();
+    @RequestMapping
+    private Iterable<Order> orders()
+    {
+        return personalInfoRepository.findAll();
     }
 
     @RequestMapping(value = "/personalinfo/{id}")
-    public Order getOrderByIdValue(@PathVariable("id") String id)
+     public Order getOrderByIdValue(@PathVariable("id") String id)
     {
         return personalInfoRepository.getOrderById(id);
     }

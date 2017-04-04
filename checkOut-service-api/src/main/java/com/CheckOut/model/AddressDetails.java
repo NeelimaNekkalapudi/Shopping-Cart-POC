@@ -7,6 +7,8 @@ public class AddressDetails {
 
     public String orderId;
 
+    public String productOrderId;
+
     public String shiptype;
 
     public String shipaddress1;
@@ -167,6 +169,14 @@ public class AddressDetails {
 
     public void setStore(String store) {
         this.store = store;
+    }
+
+    public String getProductOrderId() {
+        return productOrderId;
+    }
+
+    public void setProductOrderId(String productOrderId) {
+        this.productOrderId = productOrderId;
     }
 
     public String billstate;

@@ -3,6 +3,8 @@ package com.CheckOut.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 
 /**
  * Created by kvajramani on 28-03-2017.
@@ -245,6 +247,9 @@ public class Order {
 
     public String store;
 
+    public Date createdAt;
+
+    public Date updatedAt;
 
     public String getId() {
         return id;
@@ -254,5 +259,19 @@ public class Order {
         this.id = id;
     }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
 
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }
