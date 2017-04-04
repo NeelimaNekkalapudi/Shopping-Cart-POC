@@ -1,5 +1,5 @@
-app.controller('PersonalController',['$scope','cartFactory','$http','SERVER_PORT','SERVICE_URL','$location',
-                                      function($scope,cartFactory,$http,SERVER_PORT,SERVICE_URL,$location){
+app.controller('PersonalController',['$scope','cartFactory','$http','SERVER_PORT','SERVICE_URL','$location','$rootScope',
+                                      function($scope,cartFactory,$http,SERVER_PORT,SERVICE_URL,$location,$rootScope){
 
 
 console.info('Inside personalController ===================');
@@ -9,6 +9,7 @@ $scope.currentCarriers=["AT&T","Verizon","Sprint","Others"];
 $scope.numberPattern = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
 
 var personaInfo = cartFactory.getPersonalInfo();
+personaInfo.username = $rootScope.username;
 personaInfo.cemail = personaInfo.email;
 $scope.personalInfo = personaInfo;
                                           

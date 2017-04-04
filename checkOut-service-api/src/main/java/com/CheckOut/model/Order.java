@@ -23,6 +23,8 @@ public class Order {
 
     public String phone;
 
+    public String username;
+
     public String getCart_id() {
         return Cart_id;
     }
@@ -32,8 +34,6 @@ public class Order {
     }
 
     public String Cart_id;
-
-
 
     public String currentcarrier;
 
@@ -273,5 +273,13 @@ public class Order {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

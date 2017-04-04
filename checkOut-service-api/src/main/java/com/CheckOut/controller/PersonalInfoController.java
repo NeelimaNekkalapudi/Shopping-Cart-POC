@@ -41,6 +41,7 @@ public class PersonalInfoController {
         order.setCurrentcarrier(personalInfo.getCurrentcarrier());
         order.setCreatedAt(new Date());
         order.setUpdatedAt(new Date());
+        order.setUsername(personalInfo.getUsername());
 
         personalInfoRepository.save(order);
 

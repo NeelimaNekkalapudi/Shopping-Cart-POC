@@ -17,6 +17,8 @@ public class PersonalInformation {
 
     public String currentcarrier;
 
+    public String username;
+
     public String getOrderId() {
         return orderId;
     }
@@ -63,5 +65,13 @@ public class PersonalInformation {
 
     public void setCurrentcarrier(String currentcarrier) {
         this.currentcarrier = currentcarrier;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
