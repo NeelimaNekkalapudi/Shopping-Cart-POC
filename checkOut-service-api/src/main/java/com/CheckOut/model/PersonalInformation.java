@@ -3,7 +3,7 @@ package com.CheckOut.model;
 /**
  * Created by kvajramani on 28-03-2017.
  */
-public class PersonalInformation {
+    public class PersonalInformation {
 
     public String orderId;
 

@@ -147,10 +147,10 @@ app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','P
         },
         saveCreditRating: function(personaldetails){
             console.log('Inside Cartservice => saveCreditRating ====================');
-           var url = SERVER_PORT+SERVICE_URL.SAVE_CREDITRATING_URL;
+           var url = CHECKOUT_SERVER_PORT+SERVICE_URL.SAVE_CREDITRATING_URL;
 
            return $http({
-                method:'POST',
+                method:'PATCH',
                 url: url,
                 headers: {
                 "Content-Type": "application/json",
