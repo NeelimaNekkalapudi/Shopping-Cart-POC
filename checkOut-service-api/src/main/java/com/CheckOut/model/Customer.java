@@ -1,6 +1,6 @@
 package com.CheckOut.model;
 
-public class CustomerInformation {
+public class Customer {
 
     public String idtype;
 

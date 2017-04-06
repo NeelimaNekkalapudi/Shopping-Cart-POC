@@ -80,8 +80,8 @@ app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','P
             console.info('cartFactory->prepareFinalCart::'+ angular.toJson(finalCartInfo));
         },
         mergePersonalDetails: function(creditInfo){ 
-           finalCartInfo['cart']['id'] = shipBillInfo.orderid;
-           personalCart['cart'] = finalCartInfo['cart'];
+        /*   finalCartInfo['cart']['id'] = shipBillInfo.orderid;
+           personalCart['cart'] = finalCartInfo['cart'];*/
            personalCart['customer'] = creditInfo;
            return personalCart; 
         },
