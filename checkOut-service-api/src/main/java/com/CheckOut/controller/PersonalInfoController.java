@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.lang.Iterable;
+import java.util.List;
 
 /**
  * Created by kvajramani on 28-03-2017.
@@ -42,6 +43,8 @@ public class PersonalInfoController {
         order.setCreatedAt(new Date());
         order.setUpdatedAt(new Date());
         order.setUsername(personalInfo.getUsername());
+        order.setProducts(personalInfo.getProductsList());
+        order.setAccessories(personalInfo.getAccessoriesList());
 
         personalInfoRepository.save(order);
 

@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -50,6 +51,10 @@ public class Order {
     public String shipzip;
 
     public String billaddress1;
+
+    public List<Product> products;
+
+    public List<Accessory> accessories;
 
     public String getFirstname() {
         return firstname;
@@ -281,6 +286,22 @@ public class Order {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public List<Accessory> getAccessories() {
+        return accessories;
+    }
+
+    public void setAccessories(List<Accessory> accessories) {
+        this.accessories = accessories;
     }
 
     public String getIdtype() {

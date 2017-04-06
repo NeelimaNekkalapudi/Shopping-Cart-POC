@@ -11,13 +11,16 @@ $scope.numberPattern = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
 var personaInfo = cartFactory.getPersonalInfo();
 personaInfo.username = $rootScope.username;
 personaInfo.cemail = personaInfo.email;
-$scope.personalInfo = personaInfo;
-                                          
+personaInfo.productsList = cartFactory.getProductsList();
+if(cartFactory.getAccesoriesList().length > 0)
+{
+     personaInfo.accessoriesList = cartFactory.getAccesoriesList();
+}
 
+$scope.personalInfo = personaInfo;
 $scope.savePersonalInfo = function(personalInformation){
     var personalInfo = angular.copy(personalInformation);
-    delete personalInfo['cemail'];
-    cartFactory.savePersonalInfo(personalInfo).then(function success(response){
+    delete personalInfo['cemail'];    cartFactory.savePersonalInfo(personalInfo).then(function success(response){
                console.log(response.data.message);
                console.log(angular.toJson(response.data.orderdetails));
                cartFactory.productOrderId = response.data.orderdetails[0].orderid;

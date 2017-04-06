@@ -3,6 +3,8 @@ app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','P
     console.log("Inside the cartFactory======================");
 
     var cartItems = [];
+    var productsList = [];
+    var accessoriesList = [];
     var personalInfo = {};
     var shipBillInfo = {};
     var creditInfo = {};
@@ -33,6 +35,14 @@ app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','P
             var quantity = 1;
              items.quantity = quantity;
              cartItems.push(items);
+            if(items.hasOwnProperty('product_detail'))
+            {
+                productsList.push(items);
+            }
+            else
+            {
+                accessoriesList.push(items);
+            }
         },
 
         setItem: function(key, value){
@@ -51,7 +61,14 @@ app.factory("cartFactory",['$http','SERVER_PORT','SERVICE_URL','tokenFactory','P
         getPersonalInfo: function(){
             return personalInfo;
         },
-        
+        getProductsList:function()
+        {
+            return productsList;
+        },
+        getAccesoriesList:function()
+        {
+            return accessoriesList;
+        },
         setPersonalInfo: function(obj){
           personalInfo = obj;
          },

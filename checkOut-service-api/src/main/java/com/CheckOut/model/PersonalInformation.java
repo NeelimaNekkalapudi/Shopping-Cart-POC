@@ -1,5 +1,7 @@
 package com.CheckOut.model;
 
+import java.util.ArrayList;
+
 /**
  * Created by kvajramani on 28-03-2017.
  */
@@ -18,6 +20,10 @@ package com.CheckOut.model;
     public String currentcarrier;
 
     public String username;
+
+    public ArrayList productsList;
+
+    public ArrayList accessoriesList;
 
     public String getOrderId() {
         return orderId;
@@ -73,5 +79,21 @@ package com.CheckOut.model;
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public ArrayList getProductsList() {
+        return productsList;
+    }
+
+    public void setProductsList(ArrayList productsList) {
+        this.productsList = productsList;
+    }
+
+    public ArrayList getAccessoriesList() {
+        return accessoriesList;
+    }
+
+    public void setAccessoriesList(ArrayList accessoriesList) {
+        this.accessoriesList = accessoriesList;
     }
 }
