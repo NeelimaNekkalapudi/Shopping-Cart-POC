@@ -18,32 +18,10 @@ public class CreditInfoController {
     @Autowired
     protected PersonalInfoRepository shippingAndBillingRepository;
 
-   /*@RequestMapping(value ="/creditinfo" , method = RequestMethod.PATCH)
-    public void updateCreditInfo(@RequestBody Customer customer) {
-
-        Order orderInfo = shippingAndBillingRepository.getOrderById(String.valueOf(shippingAndBillingRepository.count()));
-        orderInfo.setIdtype(customer.getIdtype());
-        orderInfo.setIdnumber(customer.getIdnumber());
-        orderInfo.setExpirymonth(customer.getExpirymonth());
-        orderInfo.setExpiryyear(customer.getExpiryyear());
-        orderInfo.setState(customer.getState());
-        orderInfo.setSsn(customer.getSsn());
-        orderInfo.setDob(customer.getDob());
-
-
-        shippingAndBillingRepository.save(orderInfo);
-
-
-    }*/
 
 
     @RequestMapping(value ="/creditinfo" , method = RequestMethod.PATCH)
     public void updateCreditInfo(@RequestBody CreditInfo creditInfo) {
-
-        //Customer customer = new Customer();
-
-        ArrayList<Customer> customerInformationCollection = new ArrayList<Customer>();
-
 
         Order orderInfo = shippingAndBillingRepository.getOrderById(String.valueOf(shippingAndBillingRepository.count()));
         orderInfo.setIdtype(creditInfo.getCustomer().getIdtype());
