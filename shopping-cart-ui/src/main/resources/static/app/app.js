@@ -62,6 +62,9 @@ app.config(function($routeProvider)
       }).when('/createNewAccessory',{
           templateUrl: 'views/newaccessory.html',
           controller:'CreateNewAccessoryController'
+      }).when('/orderHistory',{
+         templateUrl:'views/orderhistory.html',
+         controller:'OrderHistoryController'
       }).otherwise({
         redirectTo: '/welcome'
       });

@@ -11,5 +11,6 @@ app.constant('SERVICE_URL', {
     "SAVE_BILLSHIPINFO_URL":"/checkout/billandship",
     "SAVE_CREDITRATING_URL":"/checkout/creditinfo",
     "GET_DOWNSTREAMACC_URL":"/accessories/search/downstream/",
-    "NEW_ACCESSORY_URL" : "/newaccessories"
+    "NEW_ACCESSORY_URL" : "/newaccessories",
+    "ORDER_URL" : "/orders/"
 });
