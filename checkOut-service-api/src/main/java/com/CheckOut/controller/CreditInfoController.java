@@ -39,9 +39,8 @@ public class CreditInfoController {
 
     }
 
-    public Order updatedCreditFallback(Long id){
-        System.out.println("updatedCreditFallback");
-        return new Order();
+    public void updatedCreditFallback(){
+        System.out.println("Please try again after some time");
     }
 
 }

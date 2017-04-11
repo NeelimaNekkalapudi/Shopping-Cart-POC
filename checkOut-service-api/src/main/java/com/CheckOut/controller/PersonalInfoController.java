@@ -55,7 +55,6 @@ public class PersonalInfoController {
         orderDetails.add(orderDetails1);
         personalInformationResponse.setOrderDetails(orderDetails);
         return personalInformationResponse;
-
     }
 
     @RequestMapping
@@ -70,6 +69,11 @@ public class PersonalInfoController {
         return personalInfoRepository.getOrderById(id);
     }
 
+    @RequestMapping(value = "/orders/{username}")
+    public Iterable<Order> getOrderByUserNameValue(@PathVariable("username") String username)
+    {
+        return personalInfoRepository.getOrderByUsername(username);
+    }
 
     @RequestMapping(value="/creditratingtypes",method = RequestMethod.GET)
     public CreditRatingTypes create() {
@@ -89,7 +93,6 @@ public class PersonalInfoController {
         itemsCollection.add(items3);
         creditRatingTypes.setItems(itemsCollection);
         return creditRatingTypes;
-
     }
 
 }

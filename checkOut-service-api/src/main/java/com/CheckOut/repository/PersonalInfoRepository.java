@@ -13,5 +13,7 @@ public interface PersonalInfoRepository extends CrudRepository<Order,String> {
 
     public Order getOrderById(@Param("id") String id);
 
+    public Iterable<Order> getOrderByUsername(@Param("username") String username);
+
     public Order save(Order order);
 }
