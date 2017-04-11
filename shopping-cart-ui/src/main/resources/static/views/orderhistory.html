@@ -1,0 +1,27 @@
+<tmo-menu></tmo-menu>
+<div style="padding-top:20px;" ng-init="showOrders()">
+    <h3 class="caption-title" style="padding-left: 100px"> My Orders </h3>
+</div>
+<div ng-if="noOrders" class="text-center" style="color:#a1b1bc">No Orders Found</div>
+
+    <div class="content-area" ng-if="ordersList.length >0" style="padding-left: 20px;padding-top: 20px;"  >
+        <section class="page-section with-sidebar sub-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 content" id="content" ng-repeat="order in ordersList">
+                        <!-- Excursion Listing -->
+                        <div class="thumbnail no-padding thumbnail-ez-ezd clearfix" >
+                            <div>
+                                <div class="media">
+                                   <p>Order Id : {{order.id}}</p>
+                                   <p>Status : Completed</p>
+                                   <p>Order Date : {{order.createdAt}}</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </div>
+</div>
