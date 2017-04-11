@@ -8,7 +8,9 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.lang.Iterable;
 import java.util.List;
@@ -45,8 +47,8 @@ public class PersonalInfoController {
         order.setEmail(personalInfo.getEmail());
         order.setPhone(personalInfo.getPhone());
         order.setCurrentcarrier(personalInfo.getCurrentcarrier());
-        order.setCreatedAt(new Date());
-        order.setUpdatedAt(new Date());
+        order.setCreatedAt(formatDate());
+        order.setUpdatedAt(formatDate());
         order.setUsername(personalInfo.getUsername());
         order.setProducts(personalInfo.getProductsList());
         order.setAccessories(personalInfo.getAccessoriesList());
@@ -105,5 +107,11 @@ public class PersonalInfoController {
         ServiceInstance localInstance = client.getLocalServiceInstance();
         return "Instance Details: "+ localInstance.getServiceId()+":"+localInstance.getHost()+":"+localInstance.getPort();
     }
-
+    public String formatDate()
+    {
+        SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        Date today = Calendar.getInstance().getTime();
+        String reportDate = df.format(today);
+        return reportDate;
+    }
 }

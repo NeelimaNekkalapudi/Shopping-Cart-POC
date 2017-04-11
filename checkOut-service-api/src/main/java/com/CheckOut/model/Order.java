@@ -252,9 +252,9 @@ public class Order {
 
     public String store;
 
-    public Date createdAt;
+    public String createdAt;
 
-    public Date updatedAt;
+    public String updatedAt;
 
     public String getId() {
         return id;
@@ -264,19 +264,19 @@ public class Order {
         this.id = id;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -373,4 +373,14 @@ public class Order {
     public String ssn;
 
     public String dob;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String status;
 }

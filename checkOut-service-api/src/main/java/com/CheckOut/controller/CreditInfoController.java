@@ -8,6 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 @RestController
 @RequestMapping(value = "/checkout", produces = MediaType.APPLICATION_JSON_VALUE)
 @CrossOrigin(origins = "http://localhost:8080")
@@ -17,7 +21,7 @@ public class CreditInfoController {
     protected PersonalInfoRepository shippingAndBillingRepository;
 
 
-    @HystrixCommand(fallbackMethod = "updatedCreditFallback")
+    /*@HystrixCommand(fallbackMethod = "updatedCreditFallback")*/
     @RequestMapping(value ="/creditinfo" , method = RequestMethod.PATCH)
     public void updateCreditInfo(@RequestBody CreditInfo creditInfo) {
 
@@ -29,6 +33,7 @@ public class CreditInfoController {
         orderInfo.setState(creditInfo.getCustomer().getState());
         orderInfo.setSsn(creditInfo.getCustomer().getSsn());
         orderInfo.setDob(creditInfo.getCustomer().getDob());
+        orderInfo.setStatus("Completed");
 
         shippingAndBillingRepository.save(orderInfo);
 
@@ -36,8 +41,8 @@ public class CreditInfoController {
 
     }
 
-    public void updatedCreditFallback(){
+   /* public void updatedCreditFallback(){
         System.out.println("Please try again after some time");
     }
-
+*/
 }
