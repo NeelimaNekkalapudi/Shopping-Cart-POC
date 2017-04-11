@@ -1,15 +1,12 @@
 package com.CheckOut.controller;
 
 import com.CheckOut.model.CreditInfo;
-import com.CheckOut.model.Customer;
 import com.CheckOut.model.Order;
 import com.CheckOut.repository.PersonalInfoRepository;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-
-import java.util.ArrayList;
 
 @RestController
 @RequestMapping(value = "/checkout", produces = MediaType.APPLICATION_JSON_VALUE)

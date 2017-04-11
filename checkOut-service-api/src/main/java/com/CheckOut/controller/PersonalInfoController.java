@@ -3,6 +3,8 @@ package com.CheckOut.controller;
 import com.CheckOut.model.*;
 import com.CheckOut.repository.PersonalInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +23,9 @@ public class PersonalInfoController {
 
     @Autowired
     protected PersonalInfoRepository personalInfoRepository;
+
+    @Autowired
+    DiscoveryClient client;
 
     @RequestMapping(value = "/personalinfo" ,method = RequestMethod.POST)
     public PersonalInformationResponse createOrder(@RequestBody PersonalInformation personalInfo)
@@ -93,6 +98,12 @@ public class PersonalInfoController {
         itemsCollection.add(items3);
         creditRatingTypes.setItems(itemsCollection);
         return creditRatingTypes;
+    }
+
+    @RequestMapping("/instance")
+    public String getInstanceDetails() {
+        ServiceInstance localInstance = client.getLocalServiceInstance();
+        return "Instance Details: "+ localInstance.getServiceId()+":"+localInstance.getHost()+":"+localInstance.getPort();
     }
 
 }
