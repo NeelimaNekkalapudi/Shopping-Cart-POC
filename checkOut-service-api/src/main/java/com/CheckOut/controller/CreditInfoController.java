@@ -7,6 +7,7 @@ import com.CheckOut.repository.PersonalInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import java.util.ArrayList;
 
@@ -19,7 +20,7 @@ public class CreditInfoController {
     protected PersonalInfoRepository shippingAndBillingRepository;
 
 
-
+    @HystrixCommand(fallbackMethod = "updatedCreditFallback")
     @RequestMapping(value ="/creditinfo" , method = RequestMethod.PATCH)
     public void updateCreditInfo(@RequestBody CreditInfo creditInfo) {
 
@@ -37,4 +38,10 @@ public class CreditInfoController {
 
 
     }
+
+    public Order updatedCreditFallback(Long id){
+        System.out.println("updatedCreditFallback");
+        return new Order();
+    }
+
 }
