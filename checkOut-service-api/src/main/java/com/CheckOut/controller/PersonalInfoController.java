@@ -5,6 +5,7 @@ import com.CheckOut.repository.PersonalInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +22,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/checkout", produces = MediaType.APPLICATION_JSON_VALUE)
 @CrossOrigin(origins = "http://localhost:8080")
+@Profile("dev")
 public class PersonalInfoController {
 
     @Autowired
@@ -59,8 +61,9 @@ public class PersonalInfoController {
 
         ArrayList<OrderDetails> orderDetails = new ArrayList();
         OrderDetails orderDetails1 = new OrderDetails();
+        orderDetails1.setOrderid(String.valueOf(personalInfoRepository.count()));
         orderDetails.add(orderDetails1);
-        personalInformationResponse.setOrderDetails(orderDetails);
+        personalInformationResponse.setOrderdetails(orderDetails);
         return personalInformationResponse;
     }
 
@@ -71,7 +74,7 @@ public class PersonalInfoController {
     }
 
     @RequestMapping(value = "/personalinfo/{id}")
-     public Order getOrderByIdValue(@PathVariable("id") String id)
+    public Order getOrderByIdValue(@PathVariable("id") String id)
     {
         return personalInfoRepository.getOrderById(id);
     }

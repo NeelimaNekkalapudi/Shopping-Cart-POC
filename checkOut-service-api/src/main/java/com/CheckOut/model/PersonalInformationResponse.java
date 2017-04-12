@@ -7,13 +7,23 @@ import java.util.ArrayList;
  */
 public class PersonalInformationResponse {
 
-    public ArrayList<OrderDetails> orderDetails;
+    public ArrayList<OrderDetails> orderdetails;
 
-    public ArrayList<OrderDetails> getOrderDetails() {
-        return orderDetails;
+    public String message;
+
+    public String getMessage() {
+        return message;
     }
 
-    public void setOrderDetails(ArrayList<OrderDetails> orderDetails) {
-        this.orderDetails = orderDetails;
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public ArrayList<OrderDetails> getOrderdetails() {
+        return orderdetails;
+    }
+
+    public void setOrderdetails(ArrayList<OrderDetails> orderdetails) {
+        this.orderdetails = orderdetails;
     }
 }

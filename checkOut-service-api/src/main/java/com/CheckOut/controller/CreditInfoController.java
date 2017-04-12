@@ -1,16 +1,15 @@
 package com.CheckOut.controller;
 
-import com.CheckOut.model.CreditInfo;
+import com.CheckOut.model.PersonalDetails;
 import com.CheckOut.model.Order;
+import com.CheckOut.model.OrderDetails;
+import com.CheckOut.model.PersonalInformationResponse;
 import com.CheckOut.repository.PersonalInfoRepository;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.ArrayList;
 
 @RestController
 @RequestMapping(value = "/checkout", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -23,7 +22,7 @@ public class CreditInfoController {
 
     /*@HystrixCommand(fallbackMethod = "updatedCreditFallback")*/
     @RequestMapping(value ="/creditinfo" , method = RequestMethod.PATCH)
-    public void updateCreditInfo(@RequestBody CreditInfo creditInfo) {
+    public PersonalInformationResponse updateCreditInfo(@RequestBody PersonalDetails creditInfo) {
 
         Order orderInfo = shippingAndBillingRepository.getOrderById(String.valueOf(shippingAndBillingRepository.count()));
         orderInfo.setIdtype(creditInfo.getCustomer().getIdtype());
@@ -37,7 +36,15 @@ public class CreditInfoController {
 
         shippingAndBillingRepository.save(orderInfo);
 
+        PersonalInformationResponse personalInformationResponse = new PersonalInformationResponse();
 
+        ArrayList<OrderDetails> orderDetails = new ArrayList();
+        OrderDetails orderDetails1 = new OrderDetails();
+        orderDetails1.setOrderid(String.valueOf(shippingAndBillingRepository.count()));
+        orderDetails.add(orderDetails1);
+        personalInformationResponse.setOrderdetails(orderDetails);
+        personalInformationResponse.setMessage("Successfully saved the order");
+        return personalInformationResponse;
 
     }
 

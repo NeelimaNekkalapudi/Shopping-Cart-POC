@@ -2,8 +2,10 @@ server:
   port: 8182
 
 spring:
-  data:
-    mongodb:
-      database: order_details
+   profiles:
+      active: dev
+   data:
+     mongodb:
+      database: Order
       host: localhost
       port: 27017

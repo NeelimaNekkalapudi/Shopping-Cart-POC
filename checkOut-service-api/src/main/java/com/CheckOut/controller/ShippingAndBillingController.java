@@ -7,6 +7,7 @@ package com.CheckOut.controller;
 import com.CheckOut.model.*;
 import com.CheckOut.repository.PersonalInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping(value = "/checkout", produces = MediaType.APPLICATION_JSON_VALUE)
 @CrossOrigin(origins = "http://localhost:8080")
+/*@Profile("qat")*/
 public class ShippingAndBillingController {
 
 
@@ -44,12 +46,13 @@ public class ShippingAndBillingController {
         billingOrder.setStore(address.getStore());
 
         shippingAndBillingRepository.save(billingOrder);
-       PersonalInformationResponse personalInformationResponse = new PersonalInformationResponse();
+        PersonalInformationResponse personalInformationResponse = new PersonalInformationResponse();
 
         ArrayList<OrderDetails> orderDetails = new ArrayList();
         OrderDetails orderDetails1 = new OrderDetails();
+        orderDetails1.setOrderid(String.valueOf(shippingAndBillingRepository.count()));
         orderDetails.add(orderDetails1);
-        personalInformationResponse.setOrderDetails(orderDetails);
+        personalInformationResponse.setOrderdetails(orderDetails);
         return personalInformationResponse;
     }
 
