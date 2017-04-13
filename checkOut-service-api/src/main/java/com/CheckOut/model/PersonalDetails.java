@@ -1,7 +1,7 @@
 package com.CheckOut.model;
 
 
-public class CreditInfo {
+public class PersonalDetails {
 
     public Customer getCustomer() {
         return customer;

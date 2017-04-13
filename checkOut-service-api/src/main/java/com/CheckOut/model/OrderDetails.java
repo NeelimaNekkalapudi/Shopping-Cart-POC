@@ -5,15 +5,13 @@ package com.CheckOut.model;
  */
 public class OrderDetails {
 
-    public String getOrderId() {
-        return orderId;
+    public String orderid;
+
+    public String getOrderid() {
+        return orderid;
     }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
+    public void setOrderid(String orderid) {
+        this.orderid = orderid;
     }
-
-    public String orderId;
-
-
 }
